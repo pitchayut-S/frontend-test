@@ -1,0 +1,25 @@
+<div class=" container">
+    <h2>ลงทะเบียน</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>ชื่อ:</label>
+            <input type="text" formControlName="name">
+        </div>
+
+        <div>
+            <label>email</label>
+            <input type="email" formControlName="email">
+        </div>
+
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+    <hr>
+
+    <div *ngIf="submitted">
+        <h3>ข้อมูลที่ได้</h3>
+        <p><strong>ชื่อ:</strong> {{ submitted.name}}</p>
+        <p><strong>email:</strong> {{ submitted.email}}</p>
+    </div>
+</div>

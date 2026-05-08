@@ -1,7 +1,14 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
+
+NgModule({
+  imports: [
+    ReactiveFormsModule,
+  ]
+})
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -9,3 +16,5 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes)
   ]
 };
+
+export class ApModule {}
